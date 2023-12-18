@@ -1,6 +1,6 @@
-# Serverless Image Handler
+# Serverless Image Processing
 
-The Serverless Image Handler is a versatile and scalable solution designed to streamline image processing within serverless environments. This project aims to provide a robust and efficient way to handle various image-related tasks, such as resizing, cropping, and optimizing, without the need for a dedicated server.
+A versatile and scalable solution designed to streamline image processing within serverless environments. This project aims to provide a robust and efficient way to handle various image-related tasks, such as resizing, cropping, and optimizing, without the need for a dedicated server.
 
 ## Purpose
 
