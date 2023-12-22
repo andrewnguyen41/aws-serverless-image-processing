@@ -216,3 +216,6 @@ The Serverless Image Handler provides various configuration options to tailor th
    - *Usage:* Update the Lambda function code to handle different image formats.
 
 Refer to the CloudFormation template and Lambda function code for detailed information on each configuration option. Customize these options based on your specific project requirements.
+
+## Support and Feedback
+Feel free to delve into the code and make adjustments to suit your specific requirements. If you encounter any questions or issues, don't hesitate to reach out. Happy coding!
