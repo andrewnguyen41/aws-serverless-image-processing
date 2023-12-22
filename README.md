@@ -1,12 +1,12 @@
 # Serverless Image Processing
 
-A versatile and scalable solution designed to streamline image processing within serverless environments. This project aims to provide a robust and efficient way to handle various image-related tasks, such as resizing, cropping, and optimizing, without the need for a dedicated server.
+A scalable, on-demand image processing system utilizing AWS Lambda, S3, and Cloudfront. This solution effectively manages numerous image-related operations such as resizing, cropping, and object recognition.
 
 ## Purpose
 
-In today's dynamic web applications, managing and delivering images efficiently is crucial for optimal user experience. The Serverless Image Handler addresses this need by offering a serverless architecture that seamlessly integrates with cloud services. This allows developers to focus on building feature-rich applications without the overhead of managing image processing infrastructure.
+In the realm of modern web applications, the efficient handling and delivery of images are key to ensuring a superior user experience. The Serverless Image Handler caters to this requirement by employing a serverless framework that effortlessly connects with cloud services. This setup enables developers to concentrate on creating applications rich in features, while avoiding the complexities of managing image processing systems.
 
-Whether you're working on a content-heavy website, a mobile app, or any project requiring on-the-fly image manipulation, the Serverless Image Handler empowers you to effortlessly incorporate image processing capabilities. Its purpose is to simplify the complexities associated with image management, offering a scalable and cost-effective solution for projects of all sizes.
+Ideal for projects ranging from content-rich websites to mobile apps, or any initiative that necessitates real-time image modification, the Serverless Image Handler provides an easy way to integrate image processing features. Its core objective is to demystify the challenges of image management, presenting a scalable and cost-effective option for projects of various scopes
 
 
 ## Table of Contents
@@ -23,108 +23,106 @@ Whether you're working on a content-heavy website, a mobile app, or any project 
 ## Getting Started
 
 ### Prerequisites
-
-Before you begin using the Serverless Image Handler, ensure you have the following prerequisites in place:
+Before you start using the Serverless Image Handler, make sure you meet the following prerequisites:
 
 1. **AWS Account:**
-   - You must have an AWS account to deploy and utilize the Serverless Image Handler.
+   - You need an active AWS account to deploy and utilize the Serverless Image Handler.
 
 2. **AWS CLI:**
-   - Install and configure the [AWS Command Line Interface (AWS CLI)](https://aws.amazon.com/cli/) to interact with AWS services from your local environment.
+   - Install and set up the [AWS Command Line Interface (AWS CLI)](https://aws.amazon.com/cli/) to interact with AWS services locally.
 
 3. **AWS Credentials:**
-   - Ensure that you have the necessary AWS credentials configured on your local machine. You can set up credentials using the AWS CLI or other methods as appropriate.
+   - Ensure that you have your AWS credentials properly configured on your local machine. You can configure these credentials using the AWS CLI or other suitable methods.
 
 4. **AWS Services:**
    - The Serverless Image Handler relies on the following AWS services:
      - **AWS CloudFormation:**
-       - Used for infrastructure as code, allowing you to define and provision AWS infrastructure in a secure and predictable manner.
+       - This service is used for infrastructure as code, allowing you to define and provision AWS infrastructure securely and predictably.
 
      - **Amazon CloudFront:**
-       - A content delivery network (CDN) service to securely and efficiently deliver images to users.
+       - It is a content delivery network (CDN) service that securely and efficiently delivers images to users.
 
      - **Amazon API Gateway:**
        - Used to create, publish, and manage APIs, providing a secure and scalable API endpoint for your Serverless Image Handler.
 
      - **AWS Lambda:**
-       - Enables you to run code without provisioning or managing servers, making it an ideal choice for serverless image processing functions.
+       - Enables you to run code without the need to provision or manage servers, making it an excellent choice for serverless image processing functions.
 
      - **Amazon S3:**
        - A highly scalable object storage service used to store and retrieve images efficiently.
 
      - **Amazon Rekognition (optional):**
-       - If leveraging image recognition features, ensure that the [Amazon Rekognition](https://aws.amazon.com/rekognition/) service is configured and accessible.
+       - If you plan to use image recognition features, make sure that the [Amazon Rekognition](https://aws.amazon.com/rekognition/) service is properly configured and accessible.
 
      - **AWS Secrets Manager (optional):**
-       - For securely storing and managing sensitive information, such as API keys or credentials.
+       - This service is used for securely storing and managing sensitive information, such as API keys or credentials.
 
-Ensure that these services are set up, and you have the necessary permissions to deploy and manage resources within your AWS account.
+Ensure that these services are configured and that you have the necessary permissions to deploy and manage resources within your AWS account.
 
 ### Installation
 
-To deploy the Serverless Image Handler, follow these steps:
+To set up the Serverless Image Handler, follow these steps:
 
-1. **Upload CloudFormation Template to Amazon S3:**
-   - If your CloudFormation template is stored locally, manually upload it to an Amazon S3 bucket. Ensure that the template is accessible for deployment.
+1. **Upload the CloudFormation Template to Amazon S3:**
+   - If your CloudFormation template is stored locally, manually upload it to an Amazon S3 bucket. Make sure the template is accessible for deployment.
 
-2. **Manually Launch the Serverless Image Handler AWS CloudFormation template:**
-   - Go to the [AWS CloudFormation Console](https://console.aws.amazon.com/cloudformation/).
+2. **Initiate the Deployment of the Serverless Image Handler AWS CloudFormation template:**
+   - Navigate to the [AWS CloudFormation Console](https://console.aws.amazon.com/cloudformation/).
    - Click the "Create stack" button.
-   - Choose "Upload a template file" and click "Choose file" to select your CloudFormation template from your local machine.
+   - Choose "Upload a template file" and use the "Choose file" option to select your CloudFormation template from your local machine.
    - Click "Next" to proceed with the deployment.
 
-   *Note: The template launches in the US East (N. Virginia) Region by default. To launch in a different AWS Region, use the Region selector in the console navigation bar.*
+   *Note: By default, the template deploys in the US East (N. Virginia) Region. If you want to deploy it in a different AWS Region, utilize the Region selector in the console navigation bar.*
 
-3. On the Specify stack details page, assign a name to your solution stack.
+3. On the "Specify stack details" page, assign a name to your solution stack.
 
-4. Under Parameters, review and modify the solution parameters as necessary.
+4. Under "Parameters," review and adjust the solution parameters as needed.
 
-5. Click Next.
+5. Click "Next."
 
-6. On the Configure stack options page, click Next.
+6. On the "Configure stack options" page, click "Next."
 
-7. On the Review page, review and confirm the settings. Select the box acknowledging that the template creates IAM resources.
+7. On the "Review" page, carefully review and confirm the settings. Don't forget to select the box acknowledging that the template creates IAM resources.
 
-8. Click Create stack to deploy the stack.
+8. Click "Create stack" to initiate the stack deployment.
 
-9. Monitor the stack status in the AWS CloudFormation console. Expect a CREATE_COMPLETE status in approximately 15 minutes.
+9. Keep an eye on the stack status in the AWS CloudFormation console. You should expect a "CREATE_COMPLETE" status in approximately 15 minutes.
 
 ## Architecture
 
-The Serverless Image Handler leverages a scalable and serverless architecture, seamlessly integrating several key AWS services to efficiently process and deliver images. Each service plays a crucial role in different stages of the image processing pipeline.
+The Serverless Image Handler employs a scalable and serverless architecture, seamlessly integrating multiple essential AWS services to effectively process and deliver images.
 
 <div align="center">
     <img width="70%" src="./assets/architecture.png"/>
 </div>
 
-### Flow Explanation
+### Explanation of the Workflow
 
 1. **Client Request:**
-   - A client initiates a request for image processing by sending a request to the Amazon CloudFront distribution associated with the Serverless Image Handler.
+   - When a client requests image processing, they send a request to the Amazon CloudFront distribution associated with the Serverless Image Handler.
 
 2. **CloudFront Distribution:**
-   - CloudFront acts as the CDN, forwarding the client request to the Amazon API Gateway.
+   - CloudFront serves as the content delivery network (CDN) and forwards the client's request to the Amazon API Gateway.
 
 3. **Amazon API Gateway:**
-   - API Gateway manages the API, triggering an AWS Lambda function to handle the requested image processing features.
+   - API Gateway manages the API and triggers an AWS Lambda function to handle the requested image processing tasks.
 
 4. **AWS Lambda:**
-   - The Lambda function retrieves the original image from Amazon S3, applies the specified features, and returns the processed image. Optionally, it may involve calls to Amazon Rekognition for facial recognition or content moderation.
+   - The Lambda function retrieves the original image from Amazon S3, applies the specified image processing features, and returns the processed image. Optionally, it may make calls to Amazon Rekognition for tasks like facial recognition or content moderation.
 
 5. **Amazon S3 (Storage):**
    - Both the original and processed images are stored in Amazon S3, ensuring durability and scalability.
 
 6. **Amazon Rekognition (Optional):**
-   - If needed, the Lambda function may interact with Amazon Rekognition for advanced image analysis.
+   - If necessary, the Lambda function can interact with Amazon Rekognition for advanced image analysis.
 
 7. **Secrets Manager (Optional):**
-   - If signature validation is enabled, the Lambda function retrieves secret values from AWS Secrets Manager for added security.
+   - When signature validation is enabled, the Lambda function retrieves secret values from AWS Secrets Manager for added security.
 
 8. **Response to Client:**
-   - The Lambda function generates a response containing the processed image or relevant information, sent back through API Gateway and CloudFront to the client.
+   - The Lambda function generates a response that includes the processed image or relevant information, which is sent back through API Gateway and CloudFront to the client.
 
-This orchestrated flow ensures that image processing is efficiently handled in a serverless manner, with scalability, security, and optimal performance.
-
+This coordinated workflow guarantees efficient serverless image processing with a focus on scalability, security, and optimal performance.
 ## Usage
 
 ### Deploying the Serverless Image Handler
