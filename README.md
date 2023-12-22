@@ -8,16 +8,6 @@ In the realm of modern web applications, the efficient handling and delivery of 
 
 Ideal for projects ranging from content-rich websites to mobile apps, or any initiative that necessitates real-time image modification, the Serverless Image Handler provides an easy way to integrate image processing features. Its core objective is to demystify the challenges of image management, presenting a scalable and cost-effective option for projects of various scopes
 
-
-## Table of Contents
-
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [Architecture](#architecture)
-- [Usage](#usage)
-- [Configuration](#configuration)
-
 ## Getting Started
 
 ### Prerequisites
