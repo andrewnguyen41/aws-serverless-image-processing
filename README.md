@@ -17,8 +17,6 @@ Ideal for projects ranging from content-rich websites to mobile apps, or any ini
 - [Architecture](#architecture)
 - [Usage](#usage)
 - [Configuration](#configuration)
-- [Frequently Asked Questions (FAQ)](#frequently-asked-questions-faq)
-- [Roadmap](#roadmap)
 
 ## Getting Started
 
@@ -151,15 +149,6 @@ This coordinated workflow guarantees efficient serverless image processing with 
 2. **Inspect Results:**
    - Review the Lambda function logs in the AWS CloudWatch Console for debugging and troubleshooting.
 
-### Demo UI (Optional)
-
-1. **Deploying the Demo UI:**
-   - If you opted to deploy the demo UI by setting the `DeployDemoUI` parameter to 'Yes,' a separate S3 bucket (`DemoUIBucket`) is created.
-   - Upload your demo UI files (HTML, CSS, JavaScript) to the demo UI bucket.
-
-2. **Accessing the Demo UI:**
-   - Once the demo UI is deployed, access it through the generated URL.
-
 ### Additional Considerations
 
 1. **Security:**
@@ -227,57 +216,3 @@ The Serverless Image Handler provides various configuration options to tailor th
    - *Usage:* Update the Lambda function code to handle different image formats.
 
 Refer to the CloudFormation template and Lambda function code for detailed information on each configuration option. Customize these options based on your specific project requirements.
-
-## Frequently Asked Questions (FAQ)
-
-### 1. **What is the Serverless Image Handler?**
-   - The Serverless Image Handler is a scalable and serverless solution for processing and delivering images. It leverages AWS Lambda, Amazon S3, CloudFront, API Gateway, Rekognition, and Secrets Manager to provide efficient image processing features.
-
-### 2. **How do I deploy the Serverless Image Handler?**
-   - Deployment is facilitated through an AWS CloudFormation template. Simply upload the template to an S3 bucket and launch it in the AWS CloudFormation console. Detailed deployment instructions can be found in the [Installation](#installation) section of this README.
-
-### 3. **What image processing features does it support?**
-   - The Serverless Image Handler supports features such as smart cropping, content moderation, and more. You can customize and extend the functionality by modifying the Lambda function code.
-
-### 4. **Can I enable signature validation for enhanced security?**
-   - Yes, signature validation can be enabled by setting the `EnableSignature` parameter to 'Yes' during CloudFormation stack deployment. This feature utilizes AWS Secrets Manager to secure the image processing workflow.
-
-### 5. **How can I integrate my own UI with the Serverless Image Handler?**
-   - The Serverless Image Handler provides an optional demo UI that you can deploy alongside the solution. Alternatively, you can integrate your own UI by making requests to the API Gateway endpoint, specifying the desired image processing features.
-
-### 6. **Is the Serverless Image Handler suitable for production use?**
-   - Yes, the solution is designed to be production-ready. However, it's recommended to thoroughly test the deployment in a staging environment before deploying in a production setting.
-
-### 7. **What are the future plans for the Serverless Image Handler?**
-   - Check the [Roadmap](#roadmap) section for details on upcoming features and improvements. We are committed to continuously enhancing the functionality of the Serverless Image Handler based on user feedback and evolving requirements.
-
-### 8. **Is there a cost associated with using the Serverless Image Handler?**
-   - AWS services used by the Serverless Image Handler may have associated costs. Review the AWS Pricing page for each service to understand the cost implications. The solution is designed to be cost-effective with efficient serverless architecture.
-
-Feel free to reach out if you have additional questions or need further clarification.
-
-## Roadmap
-
-The Serverless Image Handler is an evolving project, and we have exciting plans for its future development. Below is a glimpse into our roadmap, detailing upcoming features and improvements:
-
-### Future Features
-
-1. **Dynamic Image Resizing:**
-   - *Description:* Implement the ability to dynamically resize images based on predefined dimensions or user input.
-
-2. **Custom Image Filters:**
-   - *Description:* Introduce support for custom image filters, allowing users to apply artistic effects or enhancements to their images.
-
-3. **Image Transformation Webhooks:**
-   - *Description:* Enable the configuration of webhooks for real-time notifications and processing when new images are added or modified.
-
-4. **Integration with Additional Cloud Services:**
-   - *Description:* Expand integration capabilities with other AWS services and third-party platforms for enhanced functionality.
-
-### Infrastructure and Scalability Improvements
-
-1. **Multi-Region Support:**
-   - *Description:* Add support for deploying the Serverless Image Handler in multiple AWS regions, improving availability and reducing latency for global users.
-
-2. **Auto-scaling and Performance Optimization:**
-   - *Description:* Implement auto-scaling mechanisms and further optimize performance to handle varying workloads efficiently.
